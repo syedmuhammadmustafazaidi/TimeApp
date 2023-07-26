@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+ <body>
+    
+    
+    <h1>Time App:</h1>
+    
+    <button onclick="window.location.reload()"  >CLICK TO REFRESH DATE & TIME</button> <BR></BR>
+    
+    
+    <script>
+        monthNames =["January" ,"Feburary","March" ,"April , ","May","June","July"]
+        dayNames =["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        
+        const date = new Date() //7th july 5:35 pm
+        let newDate = date.getDate()
+        let month = monthNames[date.getMonth()]
+        let day = dayNames[date.getDay()]
+
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+        console.log("DATE:",newDate)
+        console.log("hours:",hours)
+        console.log("days:",day)
+        console.log("New-Date:",newDate)
+        console.log("months",month)
+
+
+        
+        let ampm ;
+        
+        
+        if(hours <=11)
+        {
+            ampm="AM"
+            
+            
+            
+        }
+        else{
+            ampm="AM"
+
+        }
+        
+        if(hours ===0)
+        {
+            hours=12;
+        } 
+        
+        else      if(hours >12)
+        {
+            hours=hours-12;
+            
+            
+            
+            
+        }  
+        
+        
+        
+        if(newDate ===1 ||newDate ===31){
+            
+    console.log(newDate,"st")
+
+}
+else if(newDate ===2 || newDate ===22){
+    
+    newDate=newDate+"nd"
+    
+}
+
+
+else if(date ===3  ||date ===23){
+    
+    newDate=newDate+"rd"
+    
+}
+
+else if(newDate >3){
+    
+    newDate=newDate+"th"
+    
+}
+
+else{
+    console.log("wrong")
+}
+
+
+let a =`${newDate} ${month} ${day}  ${hours}:${minutes} ${ampm}`
+document.write(a)
+
+
+</script>
+</body>
+</html>
